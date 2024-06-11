@@ -20,16 +20,16 @@ Route::middleware(['auth', 'registered'])->group(function () {
 Route::get('/', function() { return redirect(route('portaria.index')); });
 
 // Portaria
-Route::prefix('portaria')->middleware(['auth', 'registered'])->group(function () {
-    Route::get('/', [PortariaController::class, 'index'])->name('portaria.index');
-    Route::get('/create', [PortariaController::class, 'create'])->name('portaria.create');
-    Route::post('/store', [PortariaController::class, 'store'])->name('portaria.store');
-    Route::get('/detail/{id}', [PortariaController::class, 'detail'])->name('portaria.detail');
-    Route::get('/edit/{id}', [PortariaController::class, 'edit'])->middleware(['protected_access_portaria'])->name('portaria.edit');
-    Route::put('/update/{id}', [PortariaController::class, 'update'])->middleware(['protected_access_portaria'])->name('portaria.update');
-    Route::get('/destroy/{id}', [PortariaController::class, 'softDelete'])->middleware(['protected_access_portaria'])->name('portaria.disable');
-    Route::get('/enable/{id}', [PortariaController::class, 'enable'])->middleware(['protected_access_portaria'])->name('portaria.enable');
-});
+// Route::prefix('portaria')->middleware(['auth', 'registered'])->group(function () {
+//     Route::get('/', [PortariaController::class, 'index'])->name('portaria.index');
+//     Route::get('/create', [PortariaController::class, 'create'])->name('portaria.create');
+//     Route::post('/store', [PortariaController::class, 'store'])->name('portaria.store');
+//     Route::get('/detail/{id}', [PortariaController::class, 'detail'])->name('portaria.detail');
+//     Route::get('/edit/{id}', [PortariaController::class, 'edit'])->middleware(['protected_access_portaria'])->name('portaria.edit');
+//     Route::put('/update/{id}', [PortariaController::class, 'update'])->middleware(['protected_access_portaria'])->name('portaria.update');
+//     Route::get('/destroy/{id}', [PortariaController::class, 'softDelete'])->middleware(['protected_access_portaria'])->name('portaria.disable');
+//     Route::get('/enable/{id}', [PortariaController::class, 'enable'])->middleware(['protected_access_portaria'])->name('portaria.enable');
+// });
 
 // Setores
 Route::prefix('setor')->middleware(['auth', 'registered', 'master'])->group(function () {

@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
             PerfilSeeder::class,
             SetorSeeder::class,
             UserSeeder::class,
-            AssuntoSeeder::class,
             VersaoSeeder::class
         ]);
 
