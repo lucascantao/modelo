@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'portarias')
+@section('title', 'registros')
 @section('content')
 <div>
 

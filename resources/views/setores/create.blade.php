@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'portarias')
+@section('title', 'registros')
 @section('content')
     <div class="bg-white p-1">
         <i class="bi bi-archive-fill"></i>

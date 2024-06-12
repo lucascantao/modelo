@@ -56,6 +56,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('portaria.index', absolute: false));
+        return redirect(route('registro.index', absolute: false));
     }
 }

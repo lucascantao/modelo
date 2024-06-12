@@ -7,23 +7,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use \Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 
-class Portaria extends Model
+class Registro extends Model
 {
     use HasFactory;
 
-    protected $table = 'portarias';
+    protected $table = 'registros';
     protected $fillable = [
-        'ano',
         'data',
-        'processo',
         'usuario_id',
-        'setor_id',
-        'assunto_id',
-        'data_inicio',
-        'data_final',
-        'observacoes',
-        'destino',
-        'numero',
         'deleted_at',
         'deleted_by',
         'updated_by',
@@ -60,7 +51,7 @@ class Portaria extends Model
     }
 
     /**
-     * Get the Usuario that deletes the Portaria
+     * Get the Usuario that deletes the Registro
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -70,7 +61,7 @@ class Portaria extends Model
     }
 
     /**
-     * Get the Usuario that updates the Portaria
+     * Get the Usuario that updates the Registro
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

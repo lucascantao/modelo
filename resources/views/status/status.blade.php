@@ -1,5 +1,5 @@
 @extends('guest')
-@section('title', 'portarias')
+@section('title', 'registros')
 @section('authentication')
 
 @if (Auth::user()->perfil_id != null)

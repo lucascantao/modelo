@@ -1,5 +1,5 @@
 @extends('guest')
-@section('title', 'portarias')
+@section('title', 'registros')
 @section('authentication')
 <div id="authentication_form" class="d-flex flex-column align-items-center bg-white">
     <!-- Session Status -->

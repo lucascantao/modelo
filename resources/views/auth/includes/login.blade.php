@@ -1,4 +1,4 @@
-<span class="mt-2"><a href="/"><img src="{{asset('images/SiCop-v1.png')}}" width="256px" style="object-fit: fill;" alt=""></a></span>
+<span class="mt-2"><a href="/"><img src="{{asset('images/brasao-pa.png')}}" height="128px" style="object-fit: fill;" alt=""></a></span>
 <form method="POST" action="{{ route('login') }}" class="d-flex flex-column align-items-center justify-content-center auth-form" style="height: 80%">
     @csrf
 

@@ -1,4 +1,4 @@
-<span><a href="/"><img src="{{asset('images/SiCop-v1.png')}}" width="120px" style="object-fit: fill;" alt=""></a></span>
+<span><a href="/"><img src="{{asset('images/semas-pa.png')}}" width="120px" style="object-fit: fill;" alt=""></a></span>
 <form method="POST" action="{{ route('register') }}" class="d-flex flex-column align-items-center justify-content-center">
     @csrf
     <!-- Name -->

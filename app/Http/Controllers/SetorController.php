@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Setor;
 use App\Models\User;
-use App\Models\Portaria;
+use App\Models\Registro;
 
 class SetorController extends Controller
 {
@@ -61,8 +61,8 @@ class SetorController extends Controller
             return redirect(route('setor.index'))->with('failed', 'Não é possível excluir o setor, pois contém usuários registrados');    
         }
 
-        if(Portaria::where('setor_id', '=', $id)->get()->isNotEmpty()){
-            return redirect(route('setor.index'))->with('failed', 'Não é possível excluir o setor, pois existem portarias que o usam');    
+        if(Registro::where('setor_id', '=', $id)->get()->isNotEmpty()){
+            return redirect(route('setor.index'))->with('failed', 'Não é possível excluir o setor, pois existem registros que o usam');    
         }
 
         $setor = Setor::find($id);

@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 use App\Models\User;
-use App\Models\Portaria;
+use App\Models\Registro;
 
-class PortariaProtectedAccess
+class RegistroProtectedAccess
 {
     /**
      * Handle an incoming request.
@@ -20,20 +20,20 @@ class PortariaProtectedAccess
     {
 
         // dd($request->route());
-        $portariaRoutePortariaId = $request->route()->parameters()['id'];
-        $portariaRouteUserId = Portaria::find($portariaRoutePortariaId)->usuario_id;
-        $portariaRouteSetorId = Portaria::find($portariaRoutePortariaId)->setor_id;
+        $registroRouteRegistroId = $request->route()->parameters()['id'];
+        $registroRouteUserId = Registro::find($registroRouteRegistroId)->usuario_id;
+        $registroRouteSetorId = Registro::find($registroRouteRegistroId)->setor_id;
 
 
         if(
-            (Auth::user()->id == $portariaRouteUserId)
-            || (Auth::user()->perfil_id >= 2 && Auth::user()->setor_id == $portariaRouteSetorId)
+            (Auth::user()->id == $registroRouteUserId)
+            || (Auth::user()->perfil_id >= 2 && Auth::user()->setor_id == $registroRouteSetorId)
             || Auth::user()->perfil_id >= 3
             )
         {
             return $next($request);
         }
 
-        return redirect(route('portaria.index', absolute: false))->with('failed', 'Você não é autorizado a acessar essa portaria');
+        return redirect(route('registro.index', absolute: false))->with('failed', 'Você não é autorizado a acessar essa registro');
     }
 }

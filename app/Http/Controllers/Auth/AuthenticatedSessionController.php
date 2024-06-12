@@ -50,7 +50,7 @@ class AuthenticatedSessionController extends Controller
             }
 
             Auth::login($user_on_database);
-            return redirect()->intended(route('portaria.index', absolute: false));
+            return redirect()->intended(route('registro.index', absolute: false));
         }
 
         return redirect(route('login'))->with('failed', 'Credenciais incorretas');

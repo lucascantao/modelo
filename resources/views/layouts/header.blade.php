@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg sticky-top py-3 bg-white">
     <img id="nav-img" src="{{asset('images/header-bg.png')}}">
     <div class="d-flex justify-content-between align-items-center w-100">
-        <span id="logo" ><a href="/"><img src="{{asset('images/SiCop-v3.png')}}" width="128px" alt=""></a></span>
-        <span id="titulo" class="fs-5 text-white" style="font-weight: bold">Sistema de Controle de Portarias</span>
+        <span id="logo" ><a href="/"><img src="{{asset('images/brasao-pa.png')}}" height="64px" alt=""></a></span>
+        <span id="titulo" class="fs-5 text-white" style="font-weight: bold">Sistema SEMAS</span>
         <div id="funcoes" class="me-3">
             <span 
             class="text-warning border border-warning px-2 me-2"

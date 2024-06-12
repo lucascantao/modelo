@@ -5,14 +5,14 @@
     </div>
     <ul class="nav nav-pills flex-column">
         <li>
-            {{-- <a href="{{route('portaria.registrar')}}" class="nav-link text-white align-middle">
+            {{-- <a href="{{route('registro.registrar')}}" class="nav-link text-white align-middle">
                 <i class="bi bi-search"></i>
-                <span>Registrar Portaria</span></a> --}}
+                <span>Registrar Registro</span></a> --}}
         </li>
         <li>
-            <a href="{{route('portaria.index')}}" class="nav-link text-white align-middle">
+            <a href="{{route('registro.index')}}" class="nav-link text-white align-middle">
                 <i class="bi bi-file-earmark-check-fill"></i>
-                <span>Portarias</span></a>
+                <span>Registros</span></a>
         </li>
 
         @if (Auth::user()->perfil_id > 1)
@@ -27,12 +27,6 @@
 
             @endif
 
-        <li>
-            <a href="{{route('assunto.index')}}" class="nav-link text-white align-middle">
-                <i class="bi bi-chat-square-quote-fill"></i>
-                <span>Assuntos</span>
-            </a>
-        </li>
         <li>
             <a href="{{route('user.index')}}" class="nav-link text-white align-middle">
                 <i class="bi bi-people-fill"></i>

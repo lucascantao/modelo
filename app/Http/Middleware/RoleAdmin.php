@@ -20,6 +20,6 @@ class RoleAdmin
             return $next($request);
         }
 
-        return redirect(route('portaria.index', absolute: false));
+        return redirect(route('registro.index', absolute: false));
     }
 }

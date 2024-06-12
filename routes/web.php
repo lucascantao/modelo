@@ -3,8 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetorController;
-use App\Http\Controllers\AssuntoController;
-use App\Http\Controllers\PortariaController;
+use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -17,19 +16,19 @@ Route::middleware(['auth', 'registered'])->group(function () {
 });
 
 // Home
-Route::get('/', function() { return redirect(route('portaria.index')); });
+Route::get('/', function() { return redirect(route('registro.index')); });
 
-// Portaria
-// Route::prefix('portaria')->middleware(['auth', 'registered'])->group(function () {
-//     Route::get('/', [PortariaController::class, 'index'])->name('portaria.index');
-//     Route::get('/create', [PortariaController::class, 'create'])->name('portaria.create');
-//     Route::post('/store', [PortariaController::class, 'store'])->name('portaria.store');
-//     Route::get('/detail/{id}', [PortariaController::class, 'detail'])->name('portaria.detail');
-//     Route::get('/edit/{id}', [PortariaController::class, 'edit'])->middleware(['protected_access_portaria'])->name('portaria.edit');
-//     Route::put('/update/{id}', [PortariaController::class, 'update'])->middleware(['protected_access_portaria'])->name('portaria.update');
-//     Route::get('/destroy/{id}', [PortariaController::class, 'softDelete'])->middleware(['protected_access_portaria'])->name('portaria.disable');
-//     Route::get('/enable/{id}', [PortariaController::class, 'enable'])->middleware(['protected_access_portaria'])->name('portaria.enable');
-// });
+// Registro
+Route::prefix('registro')->middleware(['auth', 'registered'])->group(function () {
+    Route::get('/', [RegistroController::class, 'index'])->name('registro.index');
+    Route::get('/create', [RegistroController::class, 'create'])->name('registro.create');
+    Route::post('/store', [RegistroController::class, 'store'])->name('registro.store');
+    Route::get('/detail/{id}', [RegistroController::class, 'detail'])->name('registro.detail');
+    Route::get('/edit/{id}', [RegistroController::class, 'edit'])->middleware(['protected_access_registro'])->name('registro.edit');
+    Route::put('/update/{id}', [RegistroController::class, 'update'])->middleware(['protected_access_registro'])->name('registro.update');
+    Route::get('/destroy/{id}', [RegistroController::class, 'softDelete'])->middleware(['protected_access_registro'])->name('registro.disable');
+    Route::get('/enable/{id}', [RegistroController::class, 'enable'])->middleware(['protected_access_registro'])->name('registro.enable');
+});
 
 // Setores
 Route::prefix('setor')->middleware(['auth', 'registered', 'master'])->group(function () {
@@ -39,16 +38,6 @@ Route::prefix('setor')->middleware(['auth', 'registered', 'master'])->group(func
     Route::get('/{setor}/edit', [SetorController::class, 'edit'])->name('setor.edit');
     Route::put('/{setor}/update', [SetorController::class, 'update'])->name('setor.update');
     Route::get('/{id}/destroy', [SetorController::class, 'destroy'])->name('setor.destroy');
-});
-
-// Assuntos
-Route::prefix('assunto')->middleware(['auth', 'registered', 'admin'])->group(function () {
-    Route::get('/', [AssuntoController::class, 'index'])->name('assunto.index');
-    Route::get('/create', [AssuntoController::class, 'create'])->name('assunto.create');
-    Route::post('/', [AssuntoController::class, 'store'])->name('assunto.store');
-    Route::get('/{assunto}/edit', [AssuntoController::class, 'edit'])->name('assunto.edit');
-    Route::put('/{assunto}/update', [AssuntoController::class, 'update'])->name('assunto.update');
-    Route::get('/{id}/destroy', [AssuntoController::class, 'destroy'])->name('assunto.destroy');
 });
 
 // Usuarios

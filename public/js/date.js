@@ -7,7 +7,7 @@ $('#data_inicio').on('change', function () {
     if($('#data_inicio').val() != '') {
 
         if(moment($('#data_inicio').val(), 'YYYY-MM-DD').format('YYYY') != ano) {
-            alert('A data de início da portaria não pode exceder o ano atual da portaria');
+            alert('A data de início da registro não pode exceder o ano atual da registro');
             $('#data_inicio').val(current_value);
         }
 
@@ -25,7 +25,7 @@ $('#data_inicio').on('change', function () {
 
 $('#data_final').on('change', function () {
     if(moment($('#data_final').val(), 'YYYY-MM-DD').format('YYYY') != ano) {
-        alert('A data final da portaria não pode exceder o ano atual da portaria');
+        alert('A data final da registro não pode exceder o ano atual da registro');
         $('#data_final').val(current_value);
     }
 

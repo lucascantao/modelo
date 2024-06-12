@@ -13,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             'registered' => App\Http\Middleware\CheckStatus::class,
-            'protected_access_portaria' => App\Http\Middleware\PortariaProtectedAccess::class,
+            'protected_access_registro' => App\Http\Middleware\RegistroProtectedAccess::class,
             'protected_access_user' => App\Http\Middleware\UserProtectedAccess::class,
             'user' => App\Http\Middleware\RoleUser::class,
             'admin' => App\Http\Middleware\RoleAdmin::class,
